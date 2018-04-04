@@ -1,64 +1,33 @@
 README
 ======
 
-This is a new version of Superfastmatch written in C++ to improve matching performance and with an index running totally in memory to improve response times.
+This is a new version of Superfastmatch written in C++ to improve matching performance and with an index running totally in memory to improve response times. This is a fork from the original (https://github.com/mediastandardstrust/superfastmatch) with updates for Ubuntu LTS in 2018.
 
 The point of the software is to index large amounts of text in memory. Therefore there isn't much reason to run it on a 32-bit OS with a 4GB cap on memory and a 64-bit OS is assumed
 
-The process for installation is as follows:
+The process for installation on Ubuntu is as follows:
 
-Dependencies
-------------
 
-Superfastmatch depends on these libraries:
+Prerequisites
+-------------
 
-[Google gflags](http://code.google.com/p/google-gflags/)
+First:
 
-[Google perftools](http://code.google.com/p/google-perftools/)
+    sudo apt install libunwind8-dev mercurial curl build-essential zlib1g-dev libsparsehash-dev liblzo2-dev libre2-dev libkyototycoon-dev cmake-curses-gui
 
-[Google ctemplate](http://code.google.com/p/google-ctemplate/)
+Finally, run:
 
-[Google sparsehash](http://code.google.com/p/google-sparsehash/)
+    sudo ldconfig
+    
 
-[RE2](http://code.google.com/p/re2/)
+Setup 
+-----
 
-[Kyoto Cabinet](http://fallabs.com/kyotocabinet/)
-
-[Kyoto Tycoon](http://fallabs.com/kyototycoon/)
-
-You might be able to get away with installing the .deb packages on the listed project pages, but this is untested.
-
-The easier route is to run:
+Run:
 
     ./scripts/bootstrap.sh
 
 and wait for everything to build. The script will ask you for your sudo password, which is required to install the libraries.
-
-On Ubuntu you'll need to do this first:
-
-    sudo apt-get install libunwind7-dev mercurial curl build-essential zlib1g-dev
-
-And you might also need a:
-
-    sudo ldconfig
-
-after the script has finished.
-
-On Fedora/Amazon AMI this will to allow bootstrap.sh to complete:
-
-    sudo yum update
-    sudo yum install git
-    sudo yum install svn
-    sudo yum install gcc
-    sudo yum install gcc-c++
-    sudo yum install zlib-devel
-    sudo yum install mercurial
-    wget http://download.savannah.gnu.org/releases/libunwind/libunwind-0.99.tar.gz
-    tar xzf libunwind-0.99.tar.gz
-    cd libunwind-0.99
-    ./configure && make && sudo make install
-
-and you might have to add /usr/local/lib to /etc/ld.so.conf 
 
 Test
 ----
@@ -120,6 +89,8 @@ This is still an early release halfway between Alpha and Beta! There are known i
 
 Acknowledgements
 ----------------
+
+This is a fork from the original (https://github.com/mediastandardstrust/superfastmatch)
 
 Thanks to [Martin Moore](http://martinjemoore.com/) and [Ben Campbell](http://scumways.com) at [Media Standards Trust](http://mediastandardstrust.org) for ongoing support for the project and to [Tom Lee](http://sunlightfoundation.com/people/tlee/), [Drew Vogel](http://sunlightfoundation.com/people/dvogel/), [Kaitlin Lee](http://sunlightfoundation.com/people/klee/) and [James Turk](http://sunlightfoundation.com/people/jturk/) at [Sunlight Labs](http://sunlightlabs.com) for being willing testers, early adopters and proponents of open source!
 
