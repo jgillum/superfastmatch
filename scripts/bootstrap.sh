@@ -21,7 +21,7 @@ cd ctemplate* && ./configure && make && sudo make install && cd ..
 cd google-perftools* && ./configure && make && sudo make install  && cd ..
 cd gflags* && mkdir build && cd build && cmake .. && make && make install && cd .. && cd ..
 cd kyotocabinet* && ./configure && make && sudo make install && cd ..
-cd kyototycoon* && sed -i 's/getpid/kyotocabinet::getpid/g' ktdbext.h && ./configure && make && sudo make install && cd ..
+cd kyototycoon* && ./configure && make && sudo make install && cd ..
 cd sparsehash-sparsehash* && ./configure && make && sudo make install && cd ..
 cd lzo-2.06 && ./configure && make && sudo make install && cd ..
 cd re2 && git apply ../../scripts/re2.diff && make && sudo make install && cd ..
